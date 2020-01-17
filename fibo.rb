@@ -1,14 +1,20 @@
-def recursive_fib
-  
+def recursive_fib num
+  if num < 2
+    return num
+  else
+    return (recursive_fib(num-1) + recursive_fib(num-2))
+  end
 end
 
-
-def iterative_fib
-  
+def iterative_fib num
+  base = [0,1]
+  i = 2
+  while i<=num
+    base.append(base[i-1] + base[i-2])
+    i = i + 1
+  return base[num]
+  end
 end
-
-
-
 
 require 'benchmark'
 num = 35
